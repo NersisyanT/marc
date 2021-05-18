@@ -1,0 +1,31 @@
+.scrollme{
+    overflow: hidden;
+    position: relative;
+    margin-top: 12.1em;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 1;
+    }
+    .main_parallax{
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .parallax-component_image{
+        height: 50em;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        z-index: 1;
+        position: relative;
+    }
+}

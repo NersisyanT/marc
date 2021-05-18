@@ -1,0 +1,1 @@
+a:5:{s:8:"username";s:5:"admin";s:4:"pass";s:32:"1fd65f62354033fc18f00f75efaaa790";s:10:"admin_pass";s:32:"1fd65f62354033fc18f00f75efaaa790";s:5:"level";i:4;s:2:"id";i:2;}

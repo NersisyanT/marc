@@ -1,0 +1,203 @@
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: 3px 0 33px 2px rgb(0 0 0 / 10%);
+    .contact{
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1.1em;
+        background-color: #000000;
+        .block{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 92.1%;
+            .left{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                .text{
+                    display: block;
+                    color: #fff;
+                    text-transform: uppercase;
+                    padding-left: 0.8em;
+                    font-size: 0.85em;
+                    letter-spacing: 0.06em;
+                    margin-right: 3.7em;
+                }
+                .phones{
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1em;
+                        height: 1.2em;
+                        background-image: url(../svg/phone-w.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                    a{
+                        display: block;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-size: 0.85em;
+                        letter-spacing: 0.06em;
+                        float: left;
+                        margin-right: 1.9em;
+                    }
+                }
+                .time{
+                    color: white;
+                    font-size: 0.85em;
+                    letter-spacing: 0.06em;
+                }
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .search{
+                    display: block;
+                    margin-right: 2em;
+                    padding-left: 1.9em;
+                    position: relative;
+                    cursor: pointer;
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-image: url(../svg/loop.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: 50% 50%;
+                        width: 16px;
+                        height: 14px;
+                    }
+                    span{
+                        display: block;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-size: 0.85em;
+                        letter-spacing: 0.06em;
+                    }
+                }
+                .open_wishlist{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 2em;
+                    cursor: pointer;
+                    .icon{
+                        width: 1.2em;
+                        height: 1.2em;
+                        margin-right: 0.6em;
+                        filter: brightness(0) opacity(1) invert(1);
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                        background-size: 100%;
+                        background-image: url(../svg/wish_circuit.svg);
+                        transition: all 400ms ease-in-out;
+                    }
+                    span{
+                        color: white;
+                        font-size: 0.85em;
+                        letter-spacing: 0.06em;
+                    }
+                }
+                .cart{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    .text{
+                        margin-right: 0.6em;
+                        font-size: 0.75em;
+                        padding-left: 2.8em;
+                        position: relative;
+                        &:before{
+                            content: '';
+                            position: absolute;
+                            top: -0.2em;
+                            left: 0;
+                            width: 1.8em;
+                            height: 1.6em;
+                            background-image: url(../svg/cart-icon.svg);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: 50%;
+                        }
+                    }
+                    .count-cart{
+                        display: block;
+                        color: #fff;
+                        text-transform: uppercase;
+                        font-size: 0.85em;
+                        letter-spacing: 0.06em;
+                    }
+                }
+            }
+        }
+    }
+    .menu-block{
+        display: block;
+        width: 100%;
+        .logo{
+            display: table;
+            margin: 0px auto;
+            background-image: url(../svg/logo1.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 81%;
+            width: 24.7em;
+            height: 4.5em;
+            margin-bottom: 1.2em;
+            cursor: pointer;
+            transition: all 400ms ease-in-out;
+        }
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0px auto;
+            width: 41.8%;
+            margin-bottom: 0.8em;
+            li{
+                a{
+                    display: block;
+                    color: #2b2b2b;
+                    text-transform: uppercase;
+                    font-size: 0.8em;
+                    letter-spacing: 0.06em;
+                    padding: 0.6em 0;
+                    position: relative;
+                    transition: all 300ms ease-in-out;
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%) scaleX(0);
+                        background-color: #7f0012;
+                        width: 41.8%;
+                        height: .15em;
+                        transition: all .3s ease-in-out;
+                    }
+                    &:hover,&.active{
+                        color: #7f0012;
+                        &:before{
+                            transform: translateX(-50%) scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
