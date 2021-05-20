@@ -56,64 +56,38 @@
                         <div class="filter-apply"><span>Применить</span></div>
                     </div>
             </div>
+            {{mess}}
             <div class="product_container">
                 <div class="prod-block">
-                    [foreach block=prod]
-                    <div id="rec5611528{prod.tId}" class="prod r js-product {prod.class}" data-prodid="{prod.tId}" data-product-lid="{prod.tId}" onclick="void(0)">
-                        [foreachif {prod.tSkidka}>0]<span class="sale">-{prod.tSkidka}%</span>[/foreachif {prod.tSkidka}>0]
-                        [if {prod.Teg} != null]
-                        <span class="tag" data-tag="{prod.Teg}">{prod.Teg}</span>
-                        [/if {prod.Teg} != null]
-                        <div class="add_to_wish"></div>
-                        <div class="image">
-                            <div class="js-product-img"  style="background-image: url({prod.tIzobrazhenie})"></div>
-                            <a class="descr" data-id="{prod.tId}" href="/product-{prod.tId}"></a>
-                            <!-- <span class="buy"></span> -->
-                            <a class="buy" href="#order"></a>                            
-                        </div>
-                        <div class="text">
-                            <span class="name js-product-name" field="li_title__2">{prod.tNazvanie}</span>
-                            [foreachif {prod.tSkidka}==0]<div class="prc"><span class="price js-product-price" field="li_price__2">{prod.tCena} грн</span></div>[/foreachif {prod.tSkidka}==0]
-                            [foreachif {prod.tSkidka}>0]<div class="prc"><span class="price js-product-price_old" field="li_price__2">{prod.tCena} грн</span><span class="price js-product-price" field="li_price__2">{prod.tSprice} грн</span></div>[/foreachif {prod.tSkidka}>0]
-                        </div>
+                    <div class="prod" v-for="product in products" :key="product.id">
+                        {{product.tNazvanie}}   
                     </div>
-                    [/foreach]
-                </div>
-                <div class="prod-block sale-block" style="display: none">
-                    [foreach block=prodsale]
-                    <div id="rec5611528{prodsale.tId}" data-aos="fade-up" class="prod r js-product" data-prodid="{prodsale.tId}" data-product-lid="{prodsale.tId}" onclick="void(0)">
-                        [foreachif {prodsale.tSkidka}>0]<span class="sale">-{prodsale.tSkidka}%</span>[/foreachif {prodsale.tSkidka}>0]
-                        <div class="add_to_wish"></div>
-                        <div class="image">
-                            <div class="js-product-img"  style="background-image: url({prodsale.tIzobrazhenie})"></div>
-                            <span class="descr" data-id="{prodsale.tId}"></span>
-                            <!-- <span class="buy"></span> -->
-                            <a class="buy" href="#order"></a>                            
-                        </div>
-                        <div class="text">
-                            <span class="name js-product-name" field="li_title__2">{prodsale.tNazvanie}</span>
-                            [foreachif {prodsale.tSkidka}==0]<div class="prc"><span class="price js-product-price" field="li_price__2">{prodsale.tCena} грн</span></div>[/foreachif {prodsale.tSkidka}==0]
-                            [foreachif {prodsale.tSkidka}>0]<div class="prc"><span class="price js-product-price_old" field="li_price__2">{prodsale.tCena} грн</span><span class="price js-product-price" field="li_price__2">{prodsale.tSprice} грн</span></div>[/foreachif {prodsale.tSkidka}>0]
-                        </div>
-                    </div>
-                    [/foreach]
-                </div>
+                </div> 
                 <button>Показать еще</button>
+            </div>
+            <div class="test" v-for="item in items" v-bind:key="item.message">
+                <span>{{item.message}}</span>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+    import Products from '../api/products.js';
+    let prod = new Products;
     export default {
-        data() {
-            return {
-                images: {
-                    image: require('@/img/back2.jpg')
-                }
+        data () {
+            return{
+                products: prod.getTodoItems(),
+                mess: 'mess',
+                items: [
+                    { message: 'Foo' },
+                    { message: 'Bar' }
+                ]
             }
-        }
+        },
     }
+    console.log(prod.getTodoItems())
 </script>
 
 <style lang="scss">

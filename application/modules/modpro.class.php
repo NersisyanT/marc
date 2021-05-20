@@ -296,7 +296,7 @@ class modpro extends modules {
 	function ajax($lang, $langDB) {
 		$db = $this->init_db();
 		$tags = array();
-		$queryTags = $db->doquery("SELECT * FROM {{Tegi}}", true);
+		$queryTags = $db->doquery("SELECT * FROM {{tegi}}", true);
 		while($row = $db->fetch_assoc($queryTags)) {
 			$tags[$row['TId']] = $row['Teg_name'];
 		}
@@ -389,7 +389,7 @@ class modpro extends modules {
 		$db = $this->init_db();
 		$prod = Route::param("prod");
 		$tags = array();
-		$queryTags = $db->doquery("SELECT * FROM {{Tegi}}", true);
+		$queryTags = $db->doquery("SELECT * FROM {{tegi}}", true);
 		while($row = $db->fetch_assoc($queryTags)) {
 			$tags[$row['TId']] = $row['Teg_name'];
 		}
@@ -434,7 +434,7 @@ class modpro extends modules {
 			execEvent("mains", $prod);
 		}
 		$this->menuCategories($db,$tmp, true);
-		$tpl = $tmp->completed_assign_vars("index");
+		$tpl = $tmp->completed_assign_vars("main");
 		$tmp->completed($tpl);
 		$tmp->display();
 	}

@@ -26,8 +26,8 @@
 			"speed_update" => false,
 			"hosting" => true,
 			"default_http_local" => "/",
-			"default_http_hostname" => "jacobs.sigma-studio.pp.ua",
-			"default_http_host" => HTTP::$protocol."://jacobs.sigma-studio.pp.ua/",
+			"default_http_hostname" => "marc",
+			"default_http_host" => "marc",
 			"default_http_mobyhost" => "",
 			"lang" => "ru",
 			"cache" => array(

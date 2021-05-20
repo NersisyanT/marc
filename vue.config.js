@@ -4,9 +4,9 @@ const PATHS = {
     dist: path.join(__dirname, '/skins/marc')
 }
 module.exports = {
-    //publicPath: `${PATHS.dist}`,
+    publicPath: '/skins/marc/',
     outputDir: `${PATHS.dist}`,
-    indexPath: '/main.tpl',
+    indexPath: `${PATHS.dist}/main.tpl`,
     configureWebpack: {
         resolve: {
             alias: {
